@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from "next/link"
 import {
   useAuthUser,
   withAuthUser,
@@ -46,7 +47,7 @@ const Demo = () => {
       <Header email={AuthUser.email} signOut={AuthUser.signOut} />
       <div style={styles.content}>
         <div style={styles.infoTextContainer}>
-          <h1><a style={styles.link} href='/todo' >TODO APP</a></h1>
+          <h1><Link style={styles.link} href='/todo' >TODO APP</Link></h1>
           <h3>Home</h3>
           <p>
             This page does not require authentication, so it won't redirect to
