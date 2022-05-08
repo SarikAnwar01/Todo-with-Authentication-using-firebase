@@ -14,7 +14,30 @@ const styles = {
   infoTextContainer: {
     marginBottom: 32,
   },
+  link: {
+    alignItems: 'center',
+    display: 'flex',
+    justifyContent: 'center',
+    margin: '0.5rem',
+    padding: '0.5rem',
+    border: '1px solid #ccc',
+    borderRadius: '0.25rem',
+    textDecoration: 'none',
+    color: '#000',
+    fontSize: '1rem',
+    fontWeight: 'bold',
+    textTransform: 'uppercase',
+    letterSpacing: '0.1rem',
+    transition: 'all 0.2s ease-in-out',
+    'a:hover': {
+      backgroundColor: 'red',
+      color: 'green',
+      cursor: 'pointer',
+    },
+  },
+
 }
+
 
 const Demo = () => {
   const AuthUser = useAuthUser()
@@ -23,19 +46,18 @@ const Demo = () => {
       <Header email={AuthUser.email} signOut={AuthUser.signOut} />
       <div style={styles.content}>
         <div style={styles.infoTextContainer}>
+          <h1><a style={styles.link} href='/todo' >TODO APP</a></h1>
           <h3>Home</h3>
           <p>
             This page does not require authentication, so it won't redirect to
-            the login page if you are not signed in.
+            the login page if you are not signed in.Click on SignIn or Todo App to signup and get access to the app.
           </p>
           <p>
-            If you remove `getServerSideProps` from this page, it will be static
-            and load the authed user only on the client side.
           </p>
         </div>
         <DemoPageLinks />
       </div>
-    </div>
+    </div >
   )
 }
 
